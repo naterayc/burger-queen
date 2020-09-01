@@ -1,8 +1,8 @@
 import React from "react";
 import Login from "./components/templateLogin/login";
-import Kitchen from "./components/templateKitchen/kitchen";
+import Kitchen from "./components/templatekitchen/kitchen";
 import Hello from "./components/templateStart/Start";
-import Salon from "./components/TemplateSalon/Salon";
+import Salon from "./components/templateSalon/Salon";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
