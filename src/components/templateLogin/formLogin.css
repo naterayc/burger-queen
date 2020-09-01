@@ -26,7 +26,9 @@
     margin: .5rem auto;
     border-radius: .5rem;
 }
-
+.no-decoration{
+    text-decoration: none;
+}
 .error-msg {
     text-align: center;
     color: maroon;

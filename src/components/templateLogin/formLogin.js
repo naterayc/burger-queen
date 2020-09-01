@@ -1,6 +1,7 @@
 import React, {Fragment, useState} from 'react';
 import './formLogin.css';
 import {useForm} from 'react-hook-form';
+import {Link} from 'react-router-dom';
 
 const FormSignIn = () => {
 
@@ -17,8 +18,6 @@ const FormSignIn = () => {
         //console.log(userName);
         sessionStorage.setItem('user', JSON.stringify(userName));
         e.target.reset();
-        const usuario = JSON.parse(sessionStorage.getItem('user'));
-        console.log(usuario.user);
     } 
 
     return (
@@ -49,10 +48,11 @@ const FormSignIn = () => {
                         {errors?.user?.message}
                     </span>
                 </div>
-                <button
-                    type="submit"
-                    className="btn">
-                        Ingresar</button>
+                <Link to="/choose" className="no-decoration">
+                    <button type="submit" className="btn">
+                    Ingresar
+                    </button>
+                </Link>
             </form>
         
         </Fragment>
