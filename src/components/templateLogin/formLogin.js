@@ -26,7 +26,7 @@ const FormSignIn = () => {
                 <div>
                 <input
                     type="text"
-                    placeholder=" Nombre de usuario                &#xf007;"
+                    placeholder=" Nombre de usuario           &#xf007;"
                     name="user"
                     className="inputs"
                     onChange={handleInputChange}
@@ -48,11 +48,9 @@ const FormSignIn = () => {
                         {errors?.user?.message}
                     </span>
                 </div>
-                <Link to="/choose" className="no-decoration">
                     <button type="submit" className="btn">
-                    Ingresar
+                        <Link to="/Area" className="no-decoration">Ingresar</Link>
                     </button>
-                </Link>
             </form>
         
         </Fragment>

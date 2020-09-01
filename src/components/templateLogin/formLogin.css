@@ -2,7 +2,7 @@
     box-sizing: border-box;
     border: solid 1px gray;
     background-color: lavender;
-    font-family: FontAwesome, 'Segoe UI', sans-serif;
+    font-family: FontAwesome, 'Work Sans', sans-serif;
     font-size: 1.5rem;
     color: gray;
     width: 46%;
@@ -19,7 +19,7 @@
     background-color: #B42C41;
     border: #B42C41 solid 1px;
     color: white;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 1.5rem;
     width: 46%;
     height: 3rem;
@@ -32,7 +32,7 @@
 .error-msg {
     text-align: center;
     color: maroon;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0 auto ;
