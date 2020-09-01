@@ -1,0 +1,9 @@
+.container {
+    margin: 35% auto auto auto;
+    text-align: center;
+}
+body {
+    background-image: url('../../img/initial-back11.png');
+    background-attachment: local;
+    background-size: cover;
+}

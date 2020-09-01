@@ -1,0 +1,37 @@
+.inputs {
+    box-sizing: border-box;
+    border: solid 1px gray;
+    background-color: lavender;
+    font-family: FontAwesome, 'Segoe UI', sans-serif;
+    font-size: 1.5rem;
+    color: gray;
+    width: 46%;
+    height: 3rem;
+    border-radius: .5rem;
+    margin-bottom: .5rem;
+}
+.inputs::placeholder {
+    color: gray;
+    text-align:start;
+}
+
+.btn {
+    background-color: #B42C41;
+    border: #B42C41 solid 1px;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.5rem;
+    width: 46%;
+    height: 3rem;
+    margin: .5rem auto;
+    border-radius: .5rem;
+}
+
+.error-msg {
+    text-align: center;
+    color: maroon;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto ;
+}
