@@ -1,7 +1,7 @@
 import React, {Fragment, useState} from 'react';
 import './formLogin.css';
-import {useForm} from 'react-hook-form';
-import {Link} from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 
 const FormSignIn = () => {
 
@@ -14,10 +14,12 @@ const FormSignIn = () => {
         )
     }
 
+   let history = useHistory();
+
     const onSubmit = (userName, e) => {
-        //console.log(userName);
         sessionStorage.setItem('user', JSON.stringify(userName));
         e.target.reset();
+        history.push('/Area');
     } 
 
     return (
@@ -49,7 +51,7 @@ const FormSignIn = () => {
                     </span>
                 </div>
                     <button type="submit" className="btn">
-                        <Link to="/Area" className="no-decoration">Ingresar</Link>
+                        Ingresar
                     </button>
             </form>
         
