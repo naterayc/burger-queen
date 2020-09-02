@@ -7,3 +7,8 @@ body {
     background-attachment: local;
     background-size: cover;
 }
+.title {
+    color:white;
+    font-size: 2rem;
+    font-family: 'Work Sans', sans-serif;
+}

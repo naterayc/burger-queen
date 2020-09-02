@@ -1,0 +1,34 @@
+[
+    {
+        "item": "Hamburguesa simple",
+        "precio": "1500"
+    },
+    {
+        "item": "Hamburguesa doble",
+        "precio": "3000"
+    },
+    {
+        "item": "Papas fritas",
+        "precio": "700"
+    },
+    {
+        "item": "Aros de cebolla",
+        "precio": "500"
+    },
+    {
+        "item": "Agua 500ml",
+        "precio": "500"
+    },
+    {
+        "item": "Agua 750ml",
+        "precio": "700"
+    },
+    {
+        "item": "Bebida/gaseosa 500ml",
+        "precio": "700"
+    },
+    {
+        "item": "Bebida/gaseosa 750ml",
+        "precio": "1000"
+    }
+]

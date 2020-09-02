@@ -1,0 +1,16 @@
+.btn {
+    display:block;
+    background-color: #B42C41;
+    border: #B42C41 solid 1px;
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    width: 46%;
+    height: 3rem;
+    margin: .5rem auto;
+    border-radius: .5rem;
+}
+.no-decoration{
+    text-decoration: none;
+    color:white;
+}

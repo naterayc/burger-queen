@@ -1,0 +1,74 @@
+.identification {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 200;
+    font-size: 1.5rem;
+    color:white;
+    margin-left: 2%;
+}
+
+.container-option-menu {
+    background-color: #b42c41;
+    margin: 15% auto auto 5%;
+    display:flex;
+    width: 50%;
+}
+
+.menu-option {
+    box-sizing: border-box;
+    margin:0 auto 1% auto;
+    display:inline-block;
+    padding: 5%;
+}
+
+.container-menu {
+    box-sizing: border-box;
+    background-color: #363636;
+    margin: 0 auto auto 5%;
+    display:flex;
+    width: 50%;
+    padding: 2%;
+}
+
+.container-items {
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.item-menu {
+    width:35%;
+    margin:2%;
+    box-sizing: border-box;
+}
+
+.box {
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #7a7a7a;
+    padding: 15%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.box-price {
+    box-sizing: border-box;
+    margin: 0 auto auto auto;
+    background-color: white;
+    padding: 5%;
+    width:100%;
+}
+
+.text {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.price {
+    color:black;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto;
+}
