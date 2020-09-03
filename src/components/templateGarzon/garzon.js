@@ -31,7 +31,7 @@ const Garzon = () => {
                 <div className="container-input">
                     <input
                         type="text"
-                        placeholder=" Comenzal"
+                        placeholder=" Comensal"
                         name="client"
                         className="inputs"
                         onChange={handleInputChange}
