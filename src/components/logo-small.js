@@ -1,11 +1,11 @@
 import React from 'react';
-import logoSmall from '../img/logoSmall.png';
+import logoSmallGray from '../img/logoSmallGray.png';
 import './logo-small.css';
 
 const LogoSmall = () => {
     return (
         <div className="container-logo-small">
-            <img src={logoSmall} className="logo-small" alt="logo" />
+            <img src={logoSmallGray} className="logo-small" alt="logo" />
         </div>
     );
 }
