@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import LogoKitchen from './logo-kitchen';
 import './identificationKitchen.css'
+import Order from "./orders";
 
 const Kitchen = () => {
 
@@ -14,6 +15,11 @@ const Kitchen = () => {
         <h2 className="kitchen">Cocina</h2>
         <h3 className="orders">Pedidos</h3>
         <LogoKitchen />
+        <div className="container-orders">
+          <Order />
+          <Order />
+          <Order />
+        </div>
         <button>
           <Link to="/area">Ir al inicio</Link>
         </button>
