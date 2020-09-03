@@ -26,47 +26,49 @@ const Garzon = () => {
     }
     return (
         <Fragment>
-            <h1 className="identification">Garzon: {usuario.user}</h1>
-            <div className="container-input">
-                <input
-                    type="text"
-                    placeholder=" Comenzal"
-                    name="client"
-                    className="inputs"
-                    onChange={handleInputChange}
-                    autoComplete="off" />
-            </div>
-            <div className="container-input">
-                <input
-                    type="text"
-                    placeholder=" Mesa"
-                    name="table"
-                    className="inputs"
-                    onChange={handleInputChanges}
-                    autoComplete="off" />
-            </div>
-            <OptionsMenu />
-            <div className="container-menu">
-                <div className="container-items">
-                    <ItemsMenu />
+            <div className="container-parent2">
+                <h1 className="identification">Garzon: {usuario.user}</h1>
+                <div className="container-input">
+                    <input
+                        type="text"
+                        placeholder=" Comenzal"
+                        name="client"
+                        className="inputs"
+                        onChange={handleInputChange}
+                        autoComplete="off" />
                 </div>
-            </div>
-            <BtnSalon />
-            <LogoSmall />
-            <div className="bill">
-                <p className="bill-text">{clientName}</p>
-                <p className="bill-text">{tableNumber}</p>
-                <div className="container-items-bill">
-                    <p className="bill-text">Agregue un producto</p>
-                    <p className="bill-text"> $0 </p>
-                    <p className="bill-text"> &#xf2ed;</p>
+                <div className="container-input">
+                    <input
+                        type="text"
+                        placeholder=" Mesa"
+                        name="table"
+                        className="inputs"
+                        onChange={handleInputChanges}
+                        autoComplete="off" />
                 </div>
-                <div className="container-total-bill">
-                    <p className="bill-total">Total</p>
-                    <p className="bill-total"> $0</p>
+                <OptionsMenu />
+                <div className="container-menu">
+                    <div className="container-items">
+                        <ItemsMenu />
+                    </div>
                 </div>
+                <BtnSalon />
+                <LogoSmall />
+                <div className="bill">
+                    <p className="bill-text">{clientName}</p>
+                    <p className="bill-text">{tableNumber}</p>
+                    <div className="container-items-bill">
+                        <p className="bill-text">Agregue un producto</p>
+                        <p className="bill-text"> $0 </p>
+                        <p className="bill-text"> &#xf2ed;</p>
+                    </div>
+                    <div className="container-total-bill">
+                        <p className="bill-total">Total</p>
+                        <p className="bill-total"> $0</p>
+                    </div>
+                </div>
+                <BtnsGarzon />
             </div>
-            <BtnsGarzon/>
         </Fragment>
     );
 }
