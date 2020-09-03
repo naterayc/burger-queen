@@ -1,5 +1,8 @@
 .container-parent2 {
-    background-color: #f6f6f6;
+    background-image: url(../../img/backDark.png);
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
     margin:0 auto;
     padding: 0;
     width:100%;
@@ -10,7 +13,7 @@
     font-family: 'Work Sans', sans-serif;
     font-weight: 200;
     font-size: 1.5rem;
-    color:black;
+    color: white;
     margin: 0 auto 5% 5%;
     text-decoration: underline;
     padding-top: 5%;
