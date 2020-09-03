@@ -64,6 +64,8 @@
     margin:2%;
     border-radius: 10px;
     box-sizing: border-box;
+    outline: none;
+    border: none;
 }
 
 .box {
@@ -89,7 +91,7 @@
 
 .text {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-align: center;
     margin: 0 auto;
     font-family: 'Work Sans', sans-serif;
