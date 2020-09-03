@@ -6,7 +6,7 @@ const ItemsMenu = () => {
 
     // De forma similar a componentDidMount y componentDidUpdate
     useEffect(() => {
-        fetch('desayuno.json')
+        fetch('menu.json')
             .then(response => response.json())
             .then(data => setMenu( menu = data ));
     });
@@ -19,7 +19,7 @@ const ItemsMenu = () => {
                         <p className="text">{item.name}</p>
                     </div>
                     <div className="box-price">
-                        <p className="price">{item.price}</p>
+                        <p className="price">$ {item.price}</p>
                     </div>
                 </div>
             );
