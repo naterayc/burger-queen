@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react';
+import React, { Fragment } from 'react';
 import './formLogin.css';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
@@ -6,13 +6,6 @@ import { useHistory } from 'react-router-dom';
 const FormSignIn = () => {
 
     const {register, errors, handleSubmit} = useForm();
-    let [userName, setUsername] = useState('');
-
-    const handleInputChange = (event) => {
-        setUsername(
-            userName = event.target.value
-        )
-    }
 
    let history = useHistory();
 
@@ -31,7 +24,6 @@ const FormSignIn = () => {
                     placeholder=" Nombre de usuario           &#xf007;"
                     name="user"
                     className="inputs"
-                    onChange={handleInputChange}
                     autoComplete="off"
                     ref={register({
                         required: {
