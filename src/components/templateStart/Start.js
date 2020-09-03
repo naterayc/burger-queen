@@ -6,9 +6,9 @@ import BtnsStart from "./btns-start";
 const Area = () => {
   return (
     <Fragment>
-      <div class="container">
+      <div className="container">
         <Logo/>
-        <h1 class="title">Seleccione su Área</h1>
+        <h1 className="title">Seleccione su Área</h1>
         <BtnsStart/>
       </div>
     </Fragment>
