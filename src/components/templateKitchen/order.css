@@ -1,0 +1,46 @@
+.container-orders {
+    display: flex;
+    padding: 5%;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.container-order {
+    background: #363636;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    width: 30%;
+    padding: 2%;
+    border: solid 2px #7a7a7a;
+}
+
+.table-number {
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.563rem;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+.order-text {
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.188rem;
+    margin: .7rem auto;
+}
+
+.btn-prepair {
+    background-color: #b42c41;
+    color: white;
+    width: 80%;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    border: solid 1px #b42c41;
+    padding: 2%;
+    margin-top: 5%;
+}
+
+.center {
+    text-align: center;
+}
