@@ -1,0 +1,30 @@
+.container-btns{
+    position: fixed;
+    top:50%;
+    right: 5%;
+    width: 43%;
+}
+
+.btn-garzon {
+    background-color: #B42C41;
+    border: #B42C41 solid 1px;
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 3rem;
+    margin: .5rem auto;
+    border-radius: .5rem;
+}
+
+.btn-cancel{
+    background-color: #ebcc29;
+    border: #ebcc29 solid 1px;
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 3rem;
+    margin: .5rem auto;
+    border-radius: .5rem;
+}

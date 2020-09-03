@@ -1,0 +1,11 @@
+.container-logo-kitchen {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    width: 30%;
+    height: 150px;
+}
+
+.logo-kitchen {
+    width: 100%;
+}

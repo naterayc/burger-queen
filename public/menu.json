@@ -1,0 +1,41 @@
+[
+    {   "id": "05",
+        "name": "Burguer simple",
+        "price": "1.500"
+    },
+    {
+        "id": "06",
+        "name": "Burguer doble",
+        "price": "3.000"
+    },
+    {
+        "id": "07",
+        "name": "Papas fritas",
+        "price": "700"
+    },
+    {
+        "id": "08",
+        "name": "Aros de cebolla",
+        "price": "500"
+    },
+    {
+        "id": "09",
+        "name": "Agua 500ml",
+        "price": "500"
+    },
+    {
+        "id": "10",
+        "name": "Agua 750ml",
+        "price": "700"
+    },
+    {
+        "id": "11",
+        "name": "Bebida 500ml",
+        "price": "700"
+    },
+    {
+        "id": "12",
+        "name": "Bebida 750ml",
+        "price": "1.000"
+    }
+]
