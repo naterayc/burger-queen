@@ -27,7 +27,7 @@ function App() {
           <Kitchen />
         </Route>
 
-        <Route path="/Salon">
+        <Route path="/salon">
           <Salon />
         </Route>
       </Switch>

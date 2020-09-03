@@ -1,34 +1,41 @@
 [
-    {
-        "item": "Hamburguesa simple",
-        "precio": "1500"
+    {   "id": "05",
+        "name": "Burguer simple",
+        "price": "1.500"
     },
     {
-        "item": "Hamburguesa doble",
-        "precio": "3000"
+        "id": "06",
+        "name": "Burguer doble",
+        "price": "3.000"
     },
     {
-        "item": "Papas fritas",
-        "precio": "700"
+        "id": "07",
+        "name": "Papas fritas",
+        "price": "700"
     },
     {
-        "item": "Aros de cebolla",
-        "precio": "500"
+        "id": "08",
+        "name": "Aros de cebolla",
+        "price": "500"
     },
     {
-        "item": "Agua 500ml",
-        "precio": "500"
+        "id": "09",
+        "name": "Agua 500ml",
+        "price": "500"
     },
     {
-        "item": "Agua 750ml",
-        "precio": "700"
+        "id": "10",
+        "name": "Agua 750ml",
+        "price": "700"
     },
     {
-        "item": "Bebida/gaseosa 500ml",
-        "precio": "700"
+        "id": "11",
+        "name": "Bebida 500ml",
+        "price": "700"
     },
     {
-        "item": "Bebida/gaseosa 750ml",
-        "precio": "1000"
+        "id": "12",
+        "name": "Bebida 750ml",
+        "price": "1.000"
     }
 ]
