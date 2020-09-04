@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './garzon.css'
 
-const ItemsMenu = () => {
-    let [menu, setMenu] = useState([]);
-
-    // De forma similar a componentDidMount y componentDidUpdate
-    useEffect(() => {
-        fetch('menu.json')
-            .then(response => response.json())
-            .then(data => setMenu( menu = data ));
-    });
-
+const ItemsMenu = (props) => {
+    if (props.option === undefined){
+        return(
+            <div className="text">Seleccione una opcion</div>
+        );
+    }
     return (
-        menu.map(item => {
+        props.option.map(item => {
             return (
                 <div key={item.id} className="item-menu">
                     <div className="box">
