@@ -45,18 +45,13 @@
     box-sizing: border-box;
     background-color: #363636;
     margin: 0 auto auto 5%;
-    display:flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     width: 45%;
     padding: 2%;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-}
-
-.container-items {
-    width:100%;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
 }
 
 .item-menu {
