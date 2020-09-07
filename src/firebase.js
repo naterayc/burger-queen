@@ -1,11 +1,8 @@
-// Firebase App (the core Firebase SDK) is always required and
-// must be listed before other Firebase SDKs
-var firebase = require("firebase/app");
+import firebase from 'firebase/app';
+import 'firebase/firestore'
 
-// Add the Firebase products that you want to use
-require("firebase/firestore");
-
-var firebaseConfig = {
+// Firebase Configuration
+const firebaseConfig = {
     apiKey: "AIzaSyCaIWTZhCfM6iG6a73gpe-wsErl8t74WMU",
     authDomain: "burger-queen-5875a.firebaseapp.com",
     databaseURL: "https://burger-queen-5875a.firebaseio.com",
@@ -18,6 +15,4 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var db = firebase.firestore();
-
-export default db;
+export {firebase};

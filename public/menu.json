@@ -1,12 +1,12 @@
 [
     {   "id": "05",
         "name": "Burguer simple",
-        "price": "1.500"
+        "price": "1500"
     },
     {
         "id": "06",
         "name": "Burguer doble",
-        "price": "3.000"
+        "price": "3000"
     },
     {
         "id": "07",
@@ -36,6 +36,6 @@
     {
         "id": "12",
         "name": "Bebida 750ml",
-        "price": "1.000"
+        "price": "1000"
     }
 ]

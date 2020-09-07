@@ -1,18 +1,22 @@
 import React from 'react';
+import ItemsInBill from './itemBill';
 
 const Bill = (props) => {
     return (
         <div className="bill">
             <p className="bill-text">{props.client}</p>
             <p className="bill-text">{props.table}</p>
-            <div className="container-items-bill">
-                <p className="bill-text">Agregue un producto</p>
-                <p className="bill-text"> $0 </p>
-                <p className="bill-text"> &#xf2ed;</p>
-            </div>
+            {props.items.length === 0 ?
+                <div className="container-items-bill">
+                    <p className="bill-text">{props.item}</p>
+                    <p className="bill-text"> {props.price} </p>
+                    <p className="bill-text"> &#xf2ed;</p>
+                </div> :
+                <ItemsInBill key={props.id} itemsInBill={props.items} />
+            }
             <div className="container-total-bill">
                 <p className="bill-total">Total</p>
-                <p className="bill-total"> $0</p>
+                <p className="bill-total">$ {props.total}</p>
             </div>
         </div>
     );
