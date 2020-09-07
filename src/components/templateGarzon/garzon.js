@@ -35,7 +35,8 @@ const Garzon = () => {
         fetch('menu.json')
             .then(response => response.json())
             .then(data => setMenu(menu = data));
-    });
+
+    }, []);
 
     let [menu2, setMenu2] = useState([]);
 
@@ -44,16 +45,23 @@ const Garzon = () => {
         fetch('desayuno.json')
             .then(response => response.json())
             .then(data => setMenu2(menu2 = data));
-    });
+    }, []);
 
-    let [menuToShow, setMenuToShow] = useState([])
+    let [menuToShow, setMenuToShow] = useState([]);
 
     const menuBreackfast = () => {
-        setMenuToShow( menuToShow = menu2 );
+        setMenuToShow(menuToShow = menu2);
     }
 
     const menuMeal = () => {
-        setMenuToShow( menuToShow = menu );
+        setMenuToShow(menuToShow = menu);
+    }
+
+    let [itemBill, setItemBill] = useState('Agregue un producto');
+    let [itemPrice, setItemPrice] = useState('$0');
+    const addItemtoBill = (e) => {
+        setItemBill(itemBill = e.currentTarget.firstChild.textContent);
+        setItemPrice(itemPrice = e.currentTarget.lastChild.textContent);
     }
 
     return (
@@ -80,13 +88,22 @@ const Garzon = () => {
                 </div>
                 <OptionsMenu breackfast={menuBreackfast} meal={menuMeal} />
                 <div className="container-menu">
-                    <ItemsMenu option={menuToShow} />
+                    {menuToShow.length === 0 ?
+                        <div className="text"> Seleccione un menú </div> :
+                        <ItemsMenu
+                            option={menuToShow}
+                            addItem={addItemtoBill}
+                            name={itemBill}
+                            price={itemPrice}
+                        />}
                 </div>
                 <BtnSalon />
                 <LogoSmall />
                 <Bill
                     client={clientName}
                     table={tableNumber}
+                    item={itemBill}
+                    price={itemPrice}
                 />
                 <BtnsGarzon />
             </div>
