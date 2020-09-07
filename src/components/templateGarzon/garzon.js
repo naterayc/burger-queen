@@ -59,9 +59,15 @@ const Garzon = () => {
 
     let [itemBill, setItemBill] = useState('Agregue un producto');
     let [itemPrice, setItemPrice] = useState('$0');
+    let [itemInBill, setItemInBill] = useState([]);
+    let [billTotal, setBillTotal]= useState(0);
+
     const addItemtoBill = (e) => {
         setItemBill(itemBill = e.currentTarget.firstChild.textContent);
         setItemPrice(itemPrice = e.currentTarget.lastChild.textContent);
+        let itemAdded = [{name: itemBill, price: itemPrice}];
+        setItemInBill([...itemInBill, itemAdded]);
+        setBillTotal(parseInt(billTotal) + parseInt(itemPrice.slice(1)));
     }
 
     return (
@@ -93,17 +99,17 @@ const Garzon = () => {
                         <ItemsMenu
                             option={menuToShow}
                             addItem={addItemtoBill}
-                            name={itemBill}
-                            price={itemPrice}
                         />}
                 </div>
                 <BtnSalon />
                 <LogoSmall />
-                <Bill
+                    <Bill
                     client={clientName}
                     table={tableNumber}
+                    items={itemInBill}
                     item={itemBill}
                     price={itemPrice}
+                    total={billTotal}
                 />
                 <BtnsGarzon />
             </div>
