@@ -45,34 +45,29 @@
     box-sizing: border-box;
     background-color: #363636;
     margin: 0 auto auto 5%;
-    display:flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
     width: 45%;
-    padding: 2%;
+    padding: 1%;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
-.container-items {
-    width:100%;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
 .item-menu {
     width: 45%;
-    margin:2%;
+    margin: 2%;
     border-radius: 10px;
+    flex-basis: 150px;
     box-sizing: border-box;
-    outline: none;
-    border: none;
 }
 
 .box {
     box-sizing: border-box;
     margin: 0;
     background-color: #7a7a7a;
-    padding: 15%;
+    padding: 15% 10%;
     width: 100%;
     box-sizing: border-box;
     border-top-right-radius: 10px;
