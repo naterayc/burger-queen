@@ -10,7 +10,7 @@ const ItemsInBill = (props) => {
                         <div key={eachItem.name} className="container-items-bill">
                             <p className="bill-text">{eachItem.name}</p>
                             <p className="bill-text"> $ {eachItem.price.slice(1)} </p>
-                            <p className="bill-text"> &#xf2ed;</p>
+                            <p className="bill-text" onClick={props.delete}> &#xf2ed;</p>
                         </div>
                     )
                 })

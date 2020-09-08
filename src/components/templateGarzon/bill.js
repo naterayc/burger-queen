@@ -12,7 +12,7 @@ const Bill = (props) => {
                     <p className="bill-text"> {props.price} </p>
                     <p className="bill-text"> &#xf2ed;</p>
                 </div> :
-                <ItemsInBill key={props.id} itemsInBill={props.items} />
+                <ItemsInBill key={props.id} itemsInBill={props.items} delete={props.delete}/>
             }
             <div className="container-total-bill">
                 <p className="bill-total">Total</p>
