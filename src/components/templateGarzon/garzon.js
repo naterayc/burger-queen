@@ -7,7 +7,7 @@ import BtnSalon from './btn-salon';
 import BtnsGarzon from './btns-garzon';
 import Identification from './identification';
 import Bill from './bill';
-
+import { firebase } from '../../firebase'
 const Garzon = () => {
     const usuario = JSON.parse(sessionStorage.getItem('user'));
     const user = usuario.user;
@@ -76,6 +76,60 @@ const Garzon = () => {
         setBillTotal(0);
     }
 
+    useEffect(() => {
+        const obtenerDatos = async () => {
+            try {
+                const db = firebase.firestore();
+                const data = await db.collection('orders').get()
+                data.docs.map(doc => {
+                    const dataF = ({ id: doc.id, ...doc.data() })
+                    console.log(dataF)
+                })
+            } catch (error) {
+                console.log(error);
+            }
+
+        }
+        obtenerDatos();
+    }, [])
+
+    const sendToKitchen = async (e) => {
+        e.preventDefault();
+
+        if (itemInBill.length === 0) {
+            console.log('vacio');
+            return
+        }
+
+        try {
+
+            const db = firebase.firestore();
+            let pedido = itemInBill.map(order => {
+                return (
+                    order.reduce((result, item)=> {
+                        return `${result}${item}`
+                    })
+                )
+            })
+            console.log(pedido)
+            const order = {
+                mesa: tableNumber,
+                pedido: pedido,
+                hora: Date.now()
+            };
+            console.log(order);
+            const data = await db.collection('orders').add(order);
+
+        } catch (error) {
+            console.log(error);
+        }
+        console.log(itemInBill);
+    }
+
+    const deleteItem = () => {
+        console.log('holi');
+    }
+
     return (
         <Fragment>
             <div className="container-parent2">
@@ -116,8 +170,9 @@ const Garzon = () => {
                     item={itemBill}
                     price={itemPrice}
                     total={billTotal}
+                    delete={deleteItem}
                 />
-                <BtnsGarzon  cancel={cancelOrder} />
+                <BtnsGarzon send={sendToKitchen} cancel={cancelOrder} />
             </div>
         </Fragment>
     );
