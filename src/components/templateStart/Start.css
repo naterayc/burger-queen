@@ -15,7 +15,7 @@
     color:white;
 }
 .container-parent{
-    background-image: url('../../img/initial-back11.png');
+    background-image: url(../../img/initial.png);
     background-attachment: local;
     background-size: cover;
     margin:0 auto;
