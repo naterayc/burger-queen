@@ -71,6 +71,8 @@ const Garzon = () => {
     }
 
     const cancelOrder = () => {
+        setClientName(clientName = 'Cliente:');
+        setTableNumber(tableNumber = 'Mesa:');
         setItemBill(itemBill = 'Agregue un producto');
         setItemPrice(itemPrice = '$0');
         setItemInBill(itemInBill = []);
