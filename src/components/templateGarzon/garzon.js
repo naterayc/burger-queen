@@ -8,6 +8,7 @@ import BtnsGarzon from './btns-garzon';
 import Identification from './identification';
 import Bill from './bill';
 import { firebase } from '../../firebase'
+import ItemsInBill from './itemBill';
 const Garzon = () => {
     const usuario = JSON.parse(sessionStorage.getItem('user'));
     const user = usuario.user;
@@ -35,7 +36,6 @@ const Garzon = () => {
         fetch('menu.json')
             .then(response => response.json())
             .then(data => setMenu(menu = data));
-
     }, []);
 
     let [menu2, setMenu2] = useState([]);
@@ -71,33 +71,16 @@ const Garzon = () => {
     }
 
     const cancelOrder = () => {
+        setItemBill(itemBill = 'Agregue un producto');
+        setItemPrice(itemPrice = '$0');
         setItemInBill(itemInBill = []);
-        console.log(itemInBill);
         setBillTotal(0);
     }
-
-    useEffect(() => {
-        const obtenerDatos = async () => {
-            try {
-                const db = firebase.firestore();
-                const data = await db.collection('orders').get()
-                data.docs.map(doc => {
-                    const dataF = ({ id: doc.id, ...doc.data() })
-                    console.log(dataF)
-                })
-            } catch (error) {
-                console.log(error);
-            }
-
-        }
-        obtenerDatos();
-    }, [])
 
     const sendToKitchen = async (e) => {
         e.preventDefault();
 
         if (itemInBill.length === 0) {
-            console.log('vacio');
             return
         }
 
@@ -106,12 +89,12 @@ const Garzon = () => {
             const db = firebase.firestore();
             let pedido = itemInBill.map(order => {
                 return (
-                    order.reduce((result, item)=> {
+                    order.reduce((result, item) => {
                         return `${result}${item}`
                     })
                 )
             })
-            console.log(pedido)
+            // console.log(pedido)
             const order = {
                 mesa: tableNumber,
                 pedido: pedido,
@@ -123,11 +106,37 @@ const Garzon = () => {
         } catch (error) {
             console.log(error);
         }
-        console.log(itemInBill);
     }
+    let [itemInBillAfterDelete, setItemInBillAfterDelete] = useState([]);
+    const deleteItem = (e) => {
 
-    const deleteItem = () => {
-        console.log('holi');
+        let itemToDelete = e.currentTarget.previousSibling.previousSibling.textContent;
+        let items = itemInBill.map(itemInBill => {
+            return (
+                itemInBill.map(eachItem => {
+                    return eachItem.name
+                }))
+        });
+
+
+        let itemsNames = items.map(items => {
+            return (items.reduce((result, item) => {
+                return `${result}${item}`
+            }))
+        });
+
+        let index = itemsNames.indexOf(itemToDelete);
+
+        itemInBill.splice(index, 1);
+
+        setItemInBillAfterDelete(itemInBillAfterDelete = itemInBill);
+
+        setItemInBill(itemInBill = itemInBillAfterDelete);
+
+        setItemBill(itemBill = '');
+        setItemPrice(itemPrice = '');
+
+        setBillTotal(parseInt(billTotal) - parseInt((e.currentTarget.previousSibling.textContent).slice(4)));
     }
 
     return (
