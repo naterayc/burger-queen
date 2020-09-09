@@ -130,6 +130,8 @@
     display: flex;
     justify-content: space-between;
     border-bottom: black solid 1px;
+    padding: 2% 0;
+    margin: 2% 0;
 }
 
 .container-total-bill {
