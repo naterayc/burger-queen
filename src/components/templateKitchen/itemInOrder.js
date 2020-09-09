@@ -4,7 +4,7 @@ const ItemInOrder = (props) => {
     return (
         props.ordersKitchen.pedido.map(order => {
             return (
-            < p className = "order-text" key={order.name}> {order.name}</p >
+                <p key={order.name} className="order-text"> {order.name} </p >
             )
         })
     )
