@@ -1,6 +1,7 @@
 .container-parent{
-    background-image: url('../../img/initial-back11.png');
-    background-attachment: local;
+    background-image: url('../../img/backDark.png');
+    background-attachment: fixed;
+    background-position: top;
     background-size: cover;
     margin:0 auto;
     padding: 0;
@@ -11,11 +12,7 @@
     padding-top: 35%;
     text-align: center;
 }
-/* body {
-    background-image: url('../../img/initial-back11.png');
-    background-attachment: local;
-    background-size: cover;
-} */
+
 .title {
     color:white;
     font-size: 2rem;
