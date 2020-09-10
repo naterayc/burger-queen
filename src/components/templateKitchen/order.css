@@ -1,7 +1,6 @@
 .container-orders {
     flex-wrap: wrap;
     display: flex;
-    flex-wrap: wrap;
     padding: 5%;
     justify-content: left;
     box-sizing: border-box;
