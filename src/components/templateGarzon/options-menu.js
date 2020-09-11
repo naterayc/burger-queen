@@ -4,10 +4,10 @@ const OptionsMenu = (props) => {
     return (
         <Fragment>
             <div className="container-option-menu">
-                <div className="menu-option" onClick={props.breackfast}>
+                <div className={props.classB} onClick={props.breackfast}>
                     <p className="text">Desayuno</p>
                 </div>
-                <div className="menu-option" onClick={props.meal}>
+                <div className={props.classM} onClick={props.meal}>
                     <p className="text">Comidas</p>
                 </div>
             </div>
