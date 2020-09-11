@@ -8,7 +8,7 @@ import BtnsGarzon from './btns-garzon';
 import Identification from './identification';
 import Bill from './bill';
 import { firebase } from '../../firebase'
-import ItemsInBill from './itemBill';
+import ModalGarzon from './modal-garzon';
 const Garzon = () => {
     const usuario = JSON.parse(sessionStorage.getItem('user'));
     const user = usuario.user;
@@ -48,12 +48,22 @@ const Garzon = () => {
     }, []);
 
     let [menuToShow, setMenuToShow] = useState([]);
+    let [classBreackfast, setClassBreackfast] = useState(["menu-option-unselected"])
+    let [classMeal, setClassMeal] = useState(["menu-option-unselected"])
 
     const menuBreackfast = () => {
+        setClassBreackfast(classBreackfast = "menu-option");
+        if (classMeal === "menu-option") {
+            setClassMeal(classMeal = "menu-option-unselected")
+        }
         setMenuToShow(menuToShow = menu2);
     }
 
     const menuMeal = () => {
+        setClassMeal(classMeal = "menu-option");
+        if (classBreackfast === "menu-option") {
+            setClassBreackfast(classBreackfast = "menu-option-unselected")
+        }
         setMenuToShow(menuToShow = menu);
     }
 
@@ -78,6 +88,7 @@ const Garzon = () => {
         setItemInBill(itemInBill = []);
         setBillTotal(0);
     }
+    const [show, setShow] = useState(false);
 
     const sendToKitchen = async (e) => {
         e.preventDefault();
@@ -103,12 +114,25 @@ const Garzon = () => {
                 hora: Date.now()
             };
             console.log(order);
-            const data = await db.collection('orders').add(order);
+            await db.collection('orders').add(order);
 
         } catch (error) {
             console.log(error);
         }
+
+        setClientName(clientName = 'Cliente:');
+        setTableNumber(tableNumber = 'Mesa:');
+        setItemBill(itemBill = 'Agregue un producto');
+        setItemPrice(itemPrice = '$0');
+        setItemInBill(itemInBill = []);
+        setBillTotal(0);
+        setShow(true);
     }
+
+    const closeModal = () => {
+        setShow(false);
+    }
+
     let [itemInBillAfterDelete, setItemInBillAfterDelete] = useState([]);
     const deleteItem = (e) => {
 
@@ -163,7 +187,11 @@ const Garzon = () => {
                         onChange={handleInputChanges}
                         autoComplete="off" />
                 </div>
-                <OptionsMenu breackfast={menuBreackfast} meal={menuMeal} />
+                <OptionsMenu
+                    classB={classBreackfast}
+                    breackfast={menuBreackfast}
+                    classM={classMeal}
+                    meal={menuMeal} />
                 <div className="container-menu">
                     {menuToShow.length === 0 ?
                         <div className="text"> Seleccione un menú </div> :
@@ -185,6 +213,7 @@ const Garzon = () => {
                 />
                 <BtnsGarzon send={sendToKitchen} cancel={cancelOrder} />
             </div>
+            {show === false ? null : <ModalGarzon show={show} close={closeModal} />}
         </Fragment>
     );
 }
