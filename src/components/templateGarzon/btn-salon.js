@@ -4,7 +4,7 @@ import './btnSalon.css'
 
 const BtnSalon = () => {
     return (
-        <Link to="/area">
+        <Link to="/salon">
             <button className="btn-salon">Pedidos a servir</button>
         </Link>
     );

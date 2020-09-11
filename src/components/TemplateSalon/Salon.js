@@ -1,25 +1,28 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
-import LogoSmall from "../logo-small";
+import LogoSmallSalon from "./logo-salon";
+import InsertIconTable from "./icon-table";
 
+const Salon = () => {
+  const usuario = JSON.parse(sessionStorage.getItem("user"));
 
-const salon = () => {
-
-    const usuario = JSON.parse(sessionStorage.getItem("user"));
-     
   return (
     <Fragment>
       <div className="container-parent2">
-        <h1 classeName="title-kitchen"> Chef: {usuario.user} </h1>
+        <h1 className="title-kitchen"> Chef: {usuario.user} </h1>
         <h2 className="kitchen">Salón</h2>
         <h3 className="orders">Pedidos listos para servir</h3>
-        <Link to="/area">
-          <LogoSmall />
-        </Link>
+        <div>
+          <LogoSmallSalon />
+        </div>
+        <div className="container-table">
+          <InsertIconTable />
+          <InsertIconTable />
+          <InsertIconTable />
+          <InsertIconTable />
+        </div>
       </div>
     </Fragment>
   );
 };
 
-export default salon;
- 
+export default Salon;
