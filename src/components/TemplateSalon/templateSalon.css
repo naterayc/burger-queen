@@ -1,1 +1,17 @@
+.title-kitchen{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 200;
+    font-size: 2rem;
+    color:white;
+    margin: 0 auto 5% 5%;
+    text-decoration: underline;
+    padding-top: 5%;
+}
 
+.kitchen{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: white;
+    margin: 0 auto 1% 5%;
+}
