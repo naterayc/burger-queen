@@ -41,7 +41,7 @@ _Definición de Terminado (DOD):_
 
 ![Prototipo de baja fidelidad](https://raw.githubusercontent.com/danielablancom/burger-queen/develop/src/img/Prototipo-baja-fidelidad.JPG)
 
-## Prototipo de alta fidelidad 
+## Prototipo de alta fidelidad  
 
 ![Primer prototipo de alta fidelidad](https://raw.githubusercontent.com/danielablancom/burger-queen/develop/src/img/Prototipo-figma1.jpg)
 
