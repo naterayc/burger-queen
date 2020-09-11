@@ -2,11 +2,11 @@
     background-image: url(../../img/backDark.png);
     background-attachment: fixed;
     background-position: top;
-    background-size: cover;
+   /*  background-size: cover; */
     margin:0 auto;
     padding: 0;
     width:100%;
-    height: 100vh;
+    height: 100vh; 
 }
 
 .identification {
@@ -39,6 +39,15 @@
     display:inline-block;
     padding: 5%;
     width:50%;
+}
+
+.menu-option-unselected {
+    box-sizing: border-box;
+    margin:0 auto 0 auto;
+    display:inline-block;
+    padding: 5%;
+    width:50%;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .container-menu {
