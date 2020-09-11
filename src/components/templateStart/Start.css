@@ -18,7 +18,7 @@
     background-image: url('../../img/backDark.png');
     background-attachment: fixed;
     background-position: top;
-    background-size: cover;
+    background-size: auto; 
     margin:0 auto;
     padding: 0;
     width:100%;
