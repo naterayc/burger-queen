@@ -1,1 +1,60 @@
+.title-kitchen {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 200;
+  font-size: 2rem;
+  color: white;
+  margin: 0 auto 5% 5%;
+  text-decoration: underline;
+  padding-top: 5%;
+}
 
+.kitchen {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: white;
+  margin: 0 auto 1% 5%;
+}
+
+.container-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 5%;
+  margin-top: 15%;
+}
+
+.icon-table {
+  background-color: #fff;
+  text-align: center;
+  padding: 0.3rem;
+  border: solid 3px #099e2a;
+  margin: 1rem;
+  width: 20%;
+  border-radius: 1.5rem;
+}
+
+.img-table {
+  width: 80%;
+}
+
+.number-table {
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Work Sans", sans-serif;
+}
+
+.container-logo-small-salon {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    width: 30%;
+    height: 150px;
+}
+
+.logo-small-salon {
+    width: 100%;
+}
