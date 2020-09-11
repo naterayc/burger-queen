@@ -26,7 +26,9 @@ const Order = (props) => {
                             </button>
                         </div>
                     </div>
+
                     {props.show === false ? null : <ModalKitchen time={props.time} show={props.show} close={props.closeModal} />}
+
                 </Fragment>
             )
         })
