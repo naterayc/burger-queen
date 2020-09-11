@@ -1,4 +1,4 @@
-### Historia de usuario 1: Mesero/a debe poder tomar pedido de cliente
+# Historia de usuario 1: Mesero/a debe poder tomar pedido de cliente
 
 Yo como meserx quiero tomar el pedido de un cliente para no depender de mi mala memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden.
 
@@ -20,7 +20,7 @@ _Definición de Terminado (DOD):_
 - Hiciste tests de usabilidad e incorporaste el feedback del usuario.
 - Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 
-### Historia de usuario 2: Jefe de cocina debe ver los pedidos
+## Historia de usuario 2: Jefe de cocina debe ver los pedidos
 
 Yo como jefx de cocina quiero ver los pedidos de los clientes en orden y marcar cuáles están listos para saber qué se debe cocinar y avisar a lxs meserxs que un pedido está listo para servirlo a un cliente.
 
