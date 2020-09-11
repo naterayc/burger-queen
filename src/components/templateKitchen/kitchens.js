@@ -17,7 +17,7 @@ const Kitchen = () => {
         const db = firebase.firestore();
         const data = await db.collection('orders').orderBy('hora', 'asc').get()
         data.docs.map(doc => {
-          setDataF( dataF = [...dataF, ({ id: doc.id, ...doc.data() })])
+          setDataF(dataF = [...dataF, ({ id: doc.id, ...doc.data() })])
         })
       } catch (error) {
         console.log(error);
@@ -31,42 +31,43 @@ const Kitchen = () => {
   const [timeT, setTimeT] = useState(0);
 
   const setFinish = (e) => {
-      const btnToUpdate = e.target;
-      const id = e.target.parentElement.parentElement.id;
-      
-      if (btnToUpdate.textContent === 'Terminar') {
-          let dateT = Date.now();
-          let dateOrder = btnToUpdate.parentElement.id;
-          setTimeT(((dateT - dateOrder) / 60000).toFixed(2));
-          setShowM(true);
 
-          const deleteOrder = async () => {
-              console.log(e.target.parentElement.parentElement.id)
-              
-              try {
-                  const db = firebase.firestore();
-                  await db.collection('orders').doc(id).delete()
-              } catch (error) {
-                  console.log(error);
-              } 
-          }
-          deleteOrder();
+    e.preventDefault();
 
-          const arrOrder = dataF.filter(order => order.id !== id)
-          console.log(dataF)
-          console.log(arrOrder)
-          setDataF(arrOrder);
+    const btnToUpdate = e.target;
+    const id = e.target.parentElement.parentElement.id;
+
+    if (btnToUpdate.textContent === 'Terminar') {
+      let dateT = Date.now();
+      let dateOrder = btnToUpdate.parentElement.id;
+      setTimeT(((dateT - dateOrder) / 60000).toFixed(2));
+      setShowM(true);
+
+      /* const deleteOrder = async () => {
+        console.log(e.target.parentElement.parentElement.id)
+
+        try {
+          const db = firebase.firestore();
+          await db.collection('orders').doc(id).delete()
+        } catch (error) {
+          console.log(error);
+        }
       }
+      deleteOrder() */
 
-      btnToUpdate.className = "btn-finish";
-      btnToUpdate.textContent = "Terminar";
+      const arrOrder = dataF.filter(order => order.id !== id);
+      setDataF(arrOrder);
+    }
+
+    btnToUpdate.className = "btn-finish";
+    btnToUpdate.textContent = "Terminar";
   }
 
 
   const closeModalK = () => {
-      setShowM(false);
+    setShowM(false);
   }
-  
+
   return (
     <Fragment >
       <div className="container-parent3">
@@ -75,7 +76,7 @@ const Kitchen = () => {
         <h3 className="orders">Pedidos</h3>
         <LogoKitchen />
         <div className="container-orders" >
-          <Order orders={dataF} finish={setFinish} time={timeT} show={showM} closeModal={closeModalK}/>
+          <Order orders={dataF} finish={setFinish} time={timeT} show={showM} closeModal={closeModalK} />
         </div>
         <button>
           <Link to="/area">Ir al inicio</Link>
