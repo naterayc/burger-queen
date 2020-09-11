@@ -2,19 +2,18 @@ import React, { Fragment, useState } from 'react';
 import './order.css';
 import ItemInOrder from './itemInOrder';
 import ModalKitchen from './modal-kitchen';
-import { firebase } from '../../firebase';
 
 const Order = (props) => {
 
 
     return (
-        props.orders.map((orders, index) => {
+        props.orders.map((orders) => {
             return (
                 <Fragment>
                     <div id={orders.id} className="container-order">
                         <h4 className="table-number">{orders.mesa}</h4>
                         <div className="align">
-                            <ItemInOrder
+                            <ItemInOrder key={props.orders}
                                 ordersKitchen={orders}
                             />
                         </div>

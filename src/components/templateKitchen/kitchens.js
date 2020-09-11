@@ -15,7 +15,7 @@ const Kitchen = () => {
     const obtenerDatos = async () => {
       try {
         const db = firebase.firestore();
-        const data = await db.collection('orders').get()
+        const data = await db.collection('orders').orderBy('hora', 'asc').get()
         data.docs.map(doc => {
           setDataF( dataF = [...dataF, ({ id: doc.id, ...doc.data() })])
         })
@@ -66,16 +66,16 @@ const Kitchen = () => {
   const closeModalK = () => {
       setShowM(false);
   }
-
+  
   return (
-    <Fragment key={dataF.map(order => order.index)}>
-      <div key={dataF.map(index => index)}className="container-parent3">
+    <Fragment >
+      <div className="container-parent3">
         <h1 className="title-kitchen"> Chef: {usuario.user} </h1>
         <h2 className="kitchen">Cocina</h2>
         <h3 className="orders">Pedidos</h3>
         <LogoKitchen />
-        <div className="container-orders" key={dataF.map(order => order.id)}>
-          <Order key={dataF.map(index => index)} orders={dataF} finish={setFinish} time={timeT} show={showM} closeModal={closeModalK}/>
+        <div className="container-orders" >
+          <Order orders={dataF} finish={setFinish} time={timeT} show={showM} closeModal={closeModalK}/>
         </div>
         <button>
           <Link to="/area">Ir al inicio</Link>
