@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import './order.css';
 import ItemInOrder from './itemInOrder';
-import BtnState from './btn-state'
+import ModalKitchen from './modal-kitchen';
 
 const Order = (props) => {
 
