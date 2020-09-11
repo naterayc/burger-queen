@@ -37,6 +37,7 @@ const Order = (props) => {
 
 
                     </div>
+                    <ModalKitchen />
                 </Fragment>
             )
         })
