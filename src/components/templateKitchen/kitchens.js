@@ -4,6 +4,7 @@ import LogoKitchen from './logo-kitchen';
 import './identificationKitchen.css'
 import Order from "./orders";
 import { firebase } from '../../firebase';
+import { isCompositeComponentWithType } from "react-dom/test-utils";
 
 
 const Kitchen = () => {
@@ -54,6 +55,20 @@ const Kitchen = () => {
         }
       }
       deleteOrder() */
+
+      const updateOrder = async (id, data) => {
+        try {
+          const db = firebase.firestore();
+          await db.collection("orders").doc(id).update(data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      
+      updateOrder(e.target.parentElement.parentElement.id, {
+        hora: "terminado"
+      })
+
 
       const arrOrder = dataF.filter(order => order.id !== id);
       setDataF(arrOrder);
