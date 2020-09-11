@@ -1,3 +1,14 @@
+.container-parent3 {
+    background-image: url(../../img/backDark.png);
+    background-attachment: fixed;
+    background-position: top;
+   /*  background-size: cover; */
+    margin:0 auto;
+    padding: 0;
+    width:100%;
+    height: 100vh; 
+}
+
 .title-kitchen{
     font-family: 'Work Sans', sans-serif;
     font-weight: 200;

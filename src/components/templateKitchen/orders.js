@@ -1,42 +1,32 @@
 import React, { Fragment, useState } from 'react';
 import './order.css';
 import ItemInOrder from './itemInOrder';
-import BtnState from './btn-state'
+import ModalKitchen from './modal-kitchen';
 
 const Order = (props) => {
 
-    let [btnText, setBtnText] = useState("Preparar");
-    let [btnClass, setBtnClass] = useState("btn-prepair");
-
-    const setFinish = (e) => {
-
-        if (props.orders.filter(item => item === e.target.id)) {
-            setBtnText("Terminar");
-            setBtnClass("btn-finish");
-        }
-    }
 
     return (
-        props.orders.map(orders => {
+        props.orders.map((orders) => {
             return (
-                <Fragment key={orders.mesa}>
-                    <div className="container-order">
+                <Fragment>
+                    <div id={orders.id} className="container-order">
                         <h4 className="table-number">{orders.mesa}</h4>
-
-                        <ItemInOrder
-                            ordersKitchen={orders}
-                        />
-                        <div key={orders.id} className="center" >
+                        <div className="align">
+                            <ItemInOrder key={props.orders}
+                                ordersKitchen={orders}
+                            />
+                        </div>
+                        <div id={orders.hora} className="center">
                             <button
                                 id={orders.id}
-                                className={btnClass}
-                                onClick={setFinish} >
-                                {btnText}
+                                className='btn-prepair'
+                                onClick={props.finish} >
+                                Preparar
                             </button>
                         </div>
-
-
                     </div>
+                    {props.show === false ? null : <ModalKitchen time={props.time} show={props.show} close={props.closeModal} />}
                 </Fragment>
             )
         })
