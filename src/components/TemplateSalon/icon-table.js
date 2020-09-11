@@ -1,5 +1,6 @@
 import React from 'react';
-import icon-table from '';
+import icon-table from './../icon-table.png';
+
 
 
 const insertIconTable = () => {
