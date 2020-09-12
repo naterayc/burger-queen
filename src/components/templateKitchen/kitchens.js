@@ -42,6 +42,7 @@ const Kitchen = () => {
       let dateT = Date.now();
       let dateOrder = btnToUpdate.parentElement.id;
       setTimeT(((dateT - dateOrder) / 60000).toFixed(2));
+      console.log('se abre modal')
       setShowM(true);
 
       const updateOrder = async (id, data) => {
