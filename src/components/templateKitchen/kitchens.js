@@ -1,10 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import LogoKitchen from './logo-kitchen';
 import './identificationKitchen.css'
 import Order from "./orders";
 import { firebase } from '../../firebase';
-import { isCompositeComponentWithType } from "react-dom/test-utils";
+
 
 
 const Kitchen = () => {
@@ -33,7 +32,7 @@ const Kitchen = () => {
 
   const setFinish = (e) => {
 
-    e.preventDefault();
+    //e.preventDefault();
 
     const btnToUpdate = e.target;
     const id = e.target.parentElement.parentElement.id;
@@ -42,7 +41,9 @@ const Kitchen = () => {
       let dateT = Date.now();
       let dateOrder = btnToUpdate.parentElement.id;
       setTimeT(((dateT - dateOrder) / 60000).toFixed(2));
-      console.log('se abre modal')
+
+      console.log('se abre modal');
+
       setShowM(true);
 
       const updateOrder = async (id, data) => {

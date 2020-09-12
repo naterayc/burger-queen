@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import './order.css';
 import ItemInOrder from './itemInOrder';
 import ModalKitchen from './modal-kitchen';
