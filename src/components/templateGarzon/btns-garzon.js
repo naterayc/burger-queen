@@ -12,7 +12,7 @@ const BtnsGarzon = (props) => {
                     </Link>
                 </div>
                 <div>
-                    <button className="btn-garzon">Ir a Pre Cuenta</button>
+                    <button className="btn-garzon" onClick={props.showModal}>Ir a Pre Cuenta</button>
                 </div>
                 <div>
                     <button className="btn-cancel" onClick={props.cancel}>Cancelar</button>

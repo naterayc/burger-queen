@@ -9,6 +9,7 @@ import Identification from './identification';
 import Bill from './bill';
 import { firebase } from '../../firebase'
 import ModalGarzon from './modal-garzon';
+import ModalPreBill from './modal-precuenta';
 const Garzon = () => {
     const usuario = JSON.parse(sessionStorage.getItem('user'));
     const user = usuario.user;
@@ -89,6 +90,7 @@ const Garzon = () => {
         setBillTotal(0);
     }
     const [show, setShow] = useState(false);
+    const [showModalPre, setShowModalPre] = useState(false)
 
     const sendToKitchen = async (e) => {
         e.preventDefault();
@@ -131,6 +133,14 @@ const Garzon = () => {
 
     const closeModal = () => {
         setShow(false);
+    }
+
+    const openModalPre = () => {
+        setShowModalPre(true);
+    }
+
+    const closeModalPre = () => {
+        setShowModalPre(false);
     }
 
     let [itemInBillAfterDelete, setItemInBillAfterDelete] = useState([]);
@@ -211,9 +221,19 @@ const Garzon = () => {
                     total={billTotal}
                     delete={deleteItem}
                 />
-                <BtnsGarzon send={sendToKitchen} cancel={cancelOrder} />
+                <BtnsGarzon send={sendToKitchen} cancel={cancelOrder} showModal={openModalPre} />
             </div>
             {show === false ? null : <ModalGarzon show={show} close={closeModal} />}
+            {showModalPre === false ? null :
+                <ModalPreBill
+                    close={closeModalPre}
+                    client={clientName}
+                    table={tableNumber}
+                    items={itemInBill}
+                    item={itemBill}
+                    price={itemPrice}
+                    total={billTotal}
+                    delete={deleteItem} />}
         </Fragment>
     );
 }
