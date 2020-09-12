@@ -44,18 +44,6 @@ const Kitchen = () => {
       setTimeT(((dateT - dateOrder) / 60000).toFixed(2));
       setShowM(true);
 
-      /* const deleteOrder = async () => {
-        console.log(e.target.parentElement.parentElement.id)
-
-        try {
-          const db = firebase.firestore();
-          await db.collection('orders').doc(id).delete()
-        } catch (error) {
-          console.log(error);
-        }
-      }
-      deleteOrder() */
-
       const updateOrder = async (id, data) => {
         try {
           const db = firebase.firestore();
@@ -64,7 +52,7 @@ const Kitchen = () => {
           console.log(error);
         }
       }
-      
+
       updateOrder(e.target.parentElement.parentElement.id, {
         hora: "terminado"
       })
@@ -93,9 +81,6 @@ const Kitchen = () => {
         <div className="container-orders" >
           <Order orders={dataF} finish={setFinish} time={timeT} show={showM} closeModal={closeModalK} />
         </div>
-        <button>
-          <Link to="/area">Ir al inicio</Link>
-        </button>
       </div>
     </Fragment>
   );
