@@ -2,10 +2,12 @@ import React, { Fragment, useState, useEffect } from "react";
 import LogoSmallSalon from "./logo-salon";
 import InsertIconTable from "./icon-table";
 import { firebase } from '../../firebase';
+import ModalSalon from "./modal-salon";
 
 const Salon = () => {
   const usuario = JSON.parse(sessionStorage.getItem("user"));
   let [ordersToServe, setOrdersToServe] = useState([]);
+  const [showMsalon, setShowMsalon] = useState(false);
 
   useEffect(() => {
     const getOrders = async () => {
@@ -37,9 +39,14 @@ const Salon = () => {
       console.log(error);
     }
 
+    setShowMsalon(true);
 
     const arrOrderToServe = ordersToServe.filter(order => order.id !== id);
       setOrdersToServe(arrOrderToServe);
+  }
+
+  const closeModalSalon = () => {
+    setShowMsalon(false);
   }
 
 
@@ -55,6 +62,7 @@ const Salon = () => {
         <div className="container-table">
           <InsertIconTable delete={deleteOrder} orders={ordersToServe} />
         </div>
+        {showMsalon === false ? null : <ModalSalon close={closeModalSalon}/>}
       </div>
     </Fragment>
   );
