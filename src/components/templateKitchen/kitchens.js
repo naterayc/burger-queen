@@ -4,6 +4,7 @@ import LogoKitchen from './logo-kitchen';
 import './identificationKitchen.css'
 import Order from "./orders";
 import { firebase } from '../../firebase';
+import { isCompositeComponentWithType } from "react-dom/test-utils";
 
 
 const Kitchen = () => {
@@ -43,17 +44,19 @@ const Kitchen = () => {
       setTimeT(((dateT - dateOrder) / 60000).toFixed(2));
       setShowM(true);
 
-      /* const deleteOrder = async () => {
-        console.log(e.target.parentElement.parentElement.id)
-
+      const updateOrder = async (id, data) => {
         try {
           const db = firebase.firestore();
-          await db.collection('orders').doc(id).delete()
+          await db.collection("orders").doc(id).update(data);
         } catch (error) {
           console.log(error);
         }
       }
-      deleteOrder() */
+
+      updateOrder(e.target.parentElement.parentElement.id, {
+        hora: "terminado"
+      })
+
 
       const arrOrder = dataF.filter(order => order.id !== id);
       setDataF(arrOrder);
@@ -78,9 +81,6 @@ const Kitchen = () => {
         <div className="container-orders" >
           <Order orders={dataF} finish={setFinish} time={timeT} show={showM} closeModal={closeModalK} />
         </div>
-        <button>
-          <Link to="/area">Ir al inicio</Link>
-        </button>
       </div>
     </Fragment>
   );
