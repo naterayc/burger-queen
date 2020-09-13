@@ -1,6 +1,6 @@
 # Burger Queen
 
-![Imagen Producto Final2](./src/img/imgfinal2.png)![Imagen Producto Final](./src/img/imgfinal.png)
+![Imagen Producto Final2](/src/img/imgfinal2.png)![Imagen Producto Final](/src/img/imgfinal.png)
 
 ## 1. Definición del producto
 
